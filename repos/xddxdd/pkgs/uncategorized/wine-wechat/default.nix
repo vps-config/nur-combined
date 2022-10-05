@@ -117,6 +117,10 @@ stdenv.mkDerivation {
   pname = "wine-wechat";
   inherit version;
   phases = [ "installPhase" ];
+  buildInputs = [
+    libjpeg
+  ];
+
   installPhase = ''
     mkdir -p $out/bin
     ln -s ${startWechat} $out/bin/wine-wechat
